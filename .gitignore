@@ -1,0 +1,13 @@
+.idea/
+*.iml
+*/libs/jar
+target/
+*.swp
+javadocs/
+data/
+spark-warehouse/
+~$*.docx
+~$*.~vsdx
+~$*.xlsx
+reply*.log
+hs*.log

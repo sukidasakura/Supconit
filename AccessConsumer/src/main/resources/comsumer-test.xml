@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hcsoa="http://hc.supconit.com/schema/hcsoa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://hc.supconit.com/schema/hcsoa http://hc.supconit.com/schema/hc/hcsoa.xsd">
+
+    <!--hcsoa是公司内部使用的，对dubbo做了修改，在需要dubbo服务的模块中引入-->
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <hcsoa:application name="consumer-of-access"/>
+    <hcsoa:registry protocol="zookeeper" address="${zk.address}"/>
+
+    <!-- 生成远程服务代理, 可以和本地bean一样使用dataAccessService -->
+    <hcsoa:reference id="dataAccessService" interface="com.supconit.data.access.services.DataAccessService" protocol="hcket" />
+
+    <!-- 客户端bean注入 -->
+    <bean id="dataAccessClientService" class="com.supconit.data.access.client.DataAccessClientServiceImpl" />
+
+
+</beans>
