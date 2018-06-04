@@ -11,6 +11,7 @@
     <modules>
         <module>AccessConsumer</module>
         <module>SparkStreaming</module>
+        <module>SpringHDFS</module>
     </modules>
 
 

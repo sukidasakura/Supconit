@@ -7,6 +7,18 @@
         <groupId>com.paris.dream</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.2.5.RELEASE</spring.version>
@@ -23,6 +35,14 @@
             <!--<artifactId>spark-redis</artifactId>-->
             <!--<version>0.3.2</version>-->
         <!--</dependency>-->
+
+
+        <dependency>
+            <!-- kafka的artifactId后面的版本号一定要和本机装的Scala版本一致，否则会报错-->
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>0.8.2.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.spark</groupId>

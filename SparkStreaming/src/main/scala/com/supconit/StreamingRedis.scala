@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /**
   * 用SparkStreaming从redis中读取数据，要用到spark-redis包。
-  * 这个包公共仓库上没有。且不支持Java
+  * 这个包公共仓库上没有。且不支持Java，只能用scala实现。
   * Created by Mashencai on 2018/5/30.
   */
 object StreamingRedis {
